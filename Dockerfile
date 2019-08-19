@@ -17,7 +17,7 @@ RUN apt-get update && apt-get -y upgrade && \
 
 # Set up start up scripts
  RUN mkdir -p /etc/service/xeoma/run
- RUN curl -o /etc/service/xeoma/run/xeoma.sh https://raw.githubusercontent.com/jknight2014/xeoma-docker/master/xeoma.sh
+ RUN curl -o /etc/service/xeoma/run/xeoma.sh https://raw.githubusercontent.com/r0bth3g33k/rtg-xeoma/master/xeoma.sh
  RUN chmod +x /etc/service/xeoma/run
 
  VOLUME /usr/local/Xeoma
