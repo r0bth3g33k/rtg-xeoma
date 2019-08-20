@@ -17,13 +17,14 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -y libasound2
 # Download and configure the latest release
  RUN curl -o /root/xeoma_linux64.tgz http://felenasoft.com/xeoma/downloads/xeoma_linux64.tgz
  RUN tar -zxvf /root/xeoma_linux64.tgz -C /root
- RUN /root/xeoma.app -install -coreauto
+ RUN /root/xeoma.app -install -hiddenmode
  RUN rm /root/xeoma_linux64.tgz
  RUN touch /root/firstrun
 
-# Set xeoma password to P@ssword
+# Set xeoma password to P@ssword and start
  RUN /root/xeoma.app -setpassword 'P@ssword'
- RUN /root/xeoma.app -showpassword
+ RUN /root/bin/Xeoma/xeoma -showpassword
+ RUN /root/bin/Xeoma/xeoma -- -service -log -startdelay 10
 
 # Set up start up scripts
 # RUN mkdir -p /etc/service/xeoma/run
