@@ -4,7 +4,7 @@ MAINTAINER Rob White <"r0bth3g33k@gmail.com">
 
 CMD ["/sbin/my_init"]
 
-RUN DEBIAN_FRONTEND=noninteractive &&
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install libasound2 so we can have audio from cameras.
 RUN apt-get update && apt-get -y upgrade && apt-get install -y libasound2
