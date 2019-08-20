@@ -3,7 +3,7 @@
 if [ ! -f "/usr/local/Xeoma/.firstrun" ]
 then
 	ls -al /usr/local/Xeoma/.firstrun
-	/root/xeoma.app -setpassword `tr -dc 'ChangeMe!' | xargs`
+	/root/xeoma.app -setpassword `'ChangeMe!' | xargs`
 	touch /usr/local/Xeoma/.firstrun
 fi
 
