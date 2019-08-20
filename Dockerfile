@@ -5,12 +5,11 @@ MAINTAINER Rob White <"r0bth3g33k@gmail.com">
 CMD ["/sbin/my_init"]
 
 # Install libasound2 so we can have audio from cameras.
-RUN apt-get update && apt-get -y upgrade && \
-        apt-get install -y libasound2
+RUN apt-get update && apt-get -y upgrade && apt-get install -y libasound2
 
 # Download and configure the latest release
  RUN curl -o /root/xeoma_linux64.tgz http://felenasoft.com/xeoma/downloads/xeoma_linux64.tgz
- RUN tar -xvzf /root/xeoma_linux64.tgz -C /root
+ RUN tar -zxvf /root/xeoma_linux64.tgz -C /root
  RUN /root/xeoma.app -install -hiddenmode
  RUN rm /root/xeoma_linux64.tgz
  RUN touch /root/firstrun
