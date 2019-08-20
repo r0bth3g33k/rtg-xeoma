@@ -1,10 +1,15 @@
 # phusion/baseimage as FROM image.
-FROM phusion/baseimage:0.11
+FROM phusion/baseimage
 MAINTAINER Rob White <"r0bth3g33k@gmail.com">
 
+# Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
 ENV DEBIAN_FRONTEND=noninteractive
+
+# Speed up APT
+RUN echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/02apt-speedup \
+  && echo "Acquire::http {No-Cache=True;};" > /etc/apt/apt.conf.d/no-cache
 
 # Install libasound2 so we can have audio from cameras.
 RUN apt-get update && apt-get -y upgrade && apt-get install -y libasound2
