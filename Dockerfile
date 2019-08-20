@@ -26,11 +26,6 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -y libasound2
  RUN /root/bin/Xeoma/xeoma -showpassword
  RUN /root/bin/Xeoma/xeoma -- -service -log -startdelay 5
 
-# Set up start up scripts
-# RUN mkdir -p /etc/service/xeoma/run
-# RUN curl -o /etc/service/xeoma/run/xeoma.sh https://raw.githubusercontent.com/r0bth3g33k/rtg-xeoma/master/xeoma.sh
-# RUN chmod +x /etc/service/xeoma/run
-
  VOLUME /usr/local/Xeoma
 
 # Clean up APT when done.
