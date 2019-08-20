@@ -14,10 +14,14 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -y libasound2
  RUN rm /root/xeoma_linux64.tgz
  RUN touch /root/firstrun
 
+# Set xeoma password to P@ssword
+ RUN /root/xeoma.app -setpassword 'P@ssword'
+ RUN /root/xeoma.app -showpassword
+
 # Set up start up scripts
- RUN mkdir -p /etc/service/xeoma/run
- RUN curl -o /etc/service/xeoma/run/xeoma.sh https://raw.githubusercontent.com/r0bth3g33k/rtg-xeoma/master/xeoma.sh
- RUN chmod +x /etc/service/xeoma/run
+# RUN mkdir -p /etc/service/xeoma/run
+# RUN curl -o /etc/service/xeoma/run/xeoma.sh https://raw.githubusercontent.com/r0bth3g33k/rtg-xeoma/master/xeoma.sh
+# RUN chmod +x /etc/service/xeoma/run
 
  VOLUME /usr/local/Xeoma
 
