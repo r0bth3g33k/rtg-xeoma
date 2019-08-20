@@ -12,7 +12,7 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -y libasound2
 # Download and configure the latest release
  RUN curl -o /root/xeoma_linux64.tgz http://felenasoft.com/xeoma/downloads/xeoma_linux64.tgz
  RUN tar -zxvf /root/xeoma_linux64.tgz -C /root
- RUN /root/xeoma.app -install -hiddenmode
+ RUN /root/xeoma.app -install -coreauto
  RUN rm /root/xeoma_linux64.tgz
  RUN touch /root/firstrun
 
