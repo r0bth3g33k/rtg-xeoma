@@ -22,9 +22,9 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -y libasound2
  RUN touch /root/firstrun
 
 # Set xeoma password to P@ssword and start
- RUN /root/bin/Xeoma/xeoma -setpassword 'P@ssword'
- RUN /root/bin/Xeoma/xeoma -showpassword
- RUN /root/bin/Xeoma/xeoma -service -startdelay 10
+ RUN /root/xeoma.app -setpassword 'P@ssword'
+ RUN /root/xeoma.app -showpassword
+ RUN /root/xeoma.app -service -startdelay 5
 
  VOLUME /usr/local/Xeoma
 
