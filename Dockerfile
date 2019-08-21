@@ -1,5 +1,5 @@
 # phusion/baseimage as FROM image.
-FROM phusion/baseimage
+FROM phusion/baseimage:0.11
 MAINTAINER Rob White <"r0bth3g33k@gmail.com">
 
 # Use baseimage-docker's init system.
